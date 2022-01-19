@@ -1,0 +1,28 @@
+header {
+    height: 120px;
+    min-width: 120px;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: #000 0 0 .2em;
+}
+
+.background {
+    background-image: url("../images/backgrounds/officina.jpg");
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 0.7;
+}
+
+header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    margin: 2%;
+}
+
+
+footer {
+    border-top-style: outset;
+    margin-top: 2em;
+	}
+	
+span.input {width: 30%;}
