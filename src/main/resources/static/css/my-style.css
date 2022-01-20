@@ -1,28 +1,90 @@
-header {
-    height: 120px;
-    min-width: 120px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+
+
+.container{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: #000 0 0 .2em;
 }
 
-.background {
-    background-image: url("../images/backgrounds/officina.jpg");
-    min-height: 100vh;
-    min-width: 100vw;
-    opacity: 0.7;
+.demo-bg{
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
 }
 
-header > h1 {
-    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
-        fantasy;
-    margin: 2%;
+a{
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+}
+
+.navbar{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba( 18, 31, 217, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.group-link{
+    margin-left: 200px;
 }
 
 
-footer {
-    border-top-style: outset;
-    margin-top: 2em;
-	}
-	
-span.input {width: 30%;}
+.homepage-link{
+    position: absolute;
+    left: 40px;
+    color: white;
+    font-size: 50px;
+}
+
+.login-link, .register-link, .contatti-link{
+    color: white;
+    margin: 30px;
+    font-size: 40px;
+}
+
+.homepage-link:hover, .login-link:hover, .register-link:hover{
+    color: yellow;//
+}
+
+.informazioni{
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
+    width: 600px;
+    height: 600px;
+    border: solid black;
+    text-align: center;
+    background: rgba( 18, 31, 217, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.informazioni-titolo{
+    font-size: 40px;
+}
+
+.informazioni-testo{
+    font-size: 30px;
+}
+
