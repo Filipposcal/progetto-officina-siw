@@ -1,5 +1,8 @@
 package it.uniroma3.siw.spring.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users") @NoArgsConstructor @AllArgsConstructor
 public class User {
 	
 	@Id

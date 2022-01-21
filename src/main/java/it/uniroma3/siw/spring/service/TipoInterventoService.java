@@ -3,6 +3,7 @@ package it.uniroma3.siw.spring.service;
 import it.uniroma3.siw.spring.model.Intervento;
 import it.uniroma3.siw.spring.model.TipoIntervento;
 import it.uniroma3.siw.spring.repository.TipoInterventoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Service @Transactional
 public class TipoInterventoService {
 
+    @Autowired
     private TipoInterventoRepository tipoInterventoRepository;
 
     public TipoIntervento getTipoIntervento(Long id){

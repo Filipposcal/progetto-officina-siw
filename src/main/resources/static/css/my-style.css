@@ -74,14 +74,33 @@ button {
     color: yellow;
 }
 
+.mappa{
+    width: 500px;
+    height: 200px;
+    opacity: 0.8;
+}
+
 .benvenuto{
     font-size: 60px;
+}
+
+.customer-link{
+    font-size: 30px;
+    color: white;
+}
+
+.customer-link:hover{
+    color: yellow;
 }
 
 .demo-bg{
     opacity: 0.8;
     width: 100%;
     height: 100%;
+}
+
+table, th, td {
+    border: 1px solid blue;
 }
 
 a{

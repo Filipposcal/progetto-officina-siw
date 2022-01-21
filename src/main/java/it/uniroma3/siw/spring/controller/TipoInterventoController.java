@@ -42,10 +42,10 @@ public class TipoInterventoController {
         return "tipoIntervento";
     }
 
-    @GetMapping(path="/tipoIntervento/all")
+    @GetMapping(path="/interventiDisponibili")
     public String getTipiIntervento(Model model){
         model.addAttribute("tipiIntervento",this.tipoInterventoService.findAll());
-        return "tipiIntervento";
+        return "interventiDisponibili";
     }
 }
 

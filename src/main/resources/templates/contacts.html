@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Officina AutoSport</title>
+  <link rel="stylesheet" th:href="@{/css/my-style.css}">
+</head>
+<body>
+<div class="container">
+  <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+  <div class="informazioni">
+    <h1 class="informazioni-titolo"> <b>Dove ci potete contattare:</b></h1>
+    <p class="informazioni-testo">
+      <b>E-mail:</b> info@autosport.com
+      <br>
+      <b>Telefono fisso:</b> 0612345678
+      <br>
+      <b>Telefono cellulare:</b> 33301234567
+      <br>
+      <iframe class="mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7430184.666501309!2d-42.0427296298864!3d67.52242653806752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ea20dbbe3c07715%3A0x34cf9d830114e218!2sGroenlandia!5e0!3m2!1sit!2sit!4v1642780712780!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <br>
+      <h1><b>Contattaci!</b></h1>
+    </p>
+  </div>
+</div>
+<div class="navbar">
+  <a th:href="@{/}" class="homepage-link">
+    Officina AutoSport
+  </a>
+  <div class="group-link">
+    <a th:href="@{/login}" class="login-link">
+      Login
+    </a>
+    <a th:href="@{/register}" class="register-link">
+      Register
+    </a>
+    <a th:href="@{/contacts}" class="contatti-link">
+      Contatti
+    </a>
+  </div>
+</div>
+</body>
+</html>

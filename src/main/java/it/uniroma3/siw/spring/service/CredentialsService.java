@@ -2,6 +2,7 @@ package it.uniroma3.siw.spring.service;
 
 import java.util.Optional;
 
+import it.uniroma3.siw.spring.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,10 @@ public class CredentialsService {
 		return result.orElse(null);
 	}
 
+	public User getUserByUsername(String username){
+		return this.credentialsRepository.findByUsername(username).get().getUser();
+	}
+
 	@Transactional
 	public Credentials getCredentials(String username) {
 		Optional<Credentials> result = this.credentialsRepository.findByUsername(username);
@@ -37,4 +42,11 @@ public class CredentialsService {
         credentials.setPassword(this.passwordEncoder.encode(credentials.getPassword()));
         return this.credentialsRepository.save(credentials);
     }
+
+	@Transactional
+	public Credentials saveCredentialsAdmin(Credentials credentials) {
+		credentials.setRole(Credentials.ADMIN_ROLE);
+		credentials.setPassword(this.passwordEncoder.encode(credentials.getPassword()));
+		return this.credentialsRepository.save(credentials);
+	}
 }

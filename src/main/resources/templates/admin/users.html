@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Officina AutoSport</title>
@@ -9,14 +9,23 @@
 <div class="container">
     <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
     <div class="informazioni">
-        <h1 class="benvenuto"> Benvenuto!<br> Sei stato registrato correttamente!</h1>
-        <br>
-        <h2>
-            Ora procedi con il
-            <a th:href="@{/login}" class="login-link-rs">
-            <b>login!</b>
-            </a>
-        </h2>
+        <table>
+            <thead>
+            <tr>
+                <th> Username </th>
+                <th> Role </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${user.empty}">
+                <td colspan="2"> No users found </td>
+            </tr>
+            <tr th:each="user : ${user}">
+                <td><span th:text="${user.userName}"> Title </span></td>
+                <td><span th:text="${user.Role}"> Author </span></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="navbar">

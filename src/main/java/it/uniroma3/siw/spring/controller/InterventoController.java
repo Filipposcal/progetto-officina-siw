@@ -4,6 +4,8 @@ import it.uniroma3.siw.spring.controller.validator.InterventoValidator;
 import it.uniroma3.siw.spring.model.Intervento;
 import it.uniroma3.siw.spring.service.InterventoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -43,9 +45,10 @@ public class InterventoController {
         return "intervento";
     }
 
-    @GetMapping(path="/intervento/all")
+    @GetMapping(path="/interventiPassati")
     public String getInterventi(Model model){
-        model.addAttribute("interventi",this.interventoService.findAll());
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("interventi",this.interventoService.interventiByUser(this.interventoService.getCredentialsService().getUserByUsername(userDetails.getUsername())));
         return "interventi";
     }
 

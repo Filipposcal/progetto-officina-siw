@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.siw.spring.model.Prodotto;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ProdottoRepository extends CrudRepository<Prodotto, Long> {
 
 	public List<Prodotto> findByNome(String nome);
