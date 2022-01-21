@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Officina AutoSport</title>
+  <link rel="stylesheet" th:href="@{/css/my-style.css}">
+</head>
+<body>
+<div class="container">
+  <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+  <div class="registerForm">
+    <form th:action="@{/register}" method="POST">
+      <h1>Register</h1>
+      <label for="username"><b>Username</b></label>
+      <br>
+      <input type="text" placeholder="Enter Username" required th:field="${credentials.username}" id="username"/>
+      <br>
+      <label for="password"><b>Password</b></label>
+      <br>
+      <input type="password" placeholder="Enter password" required th:field="${credentials.password}" id="password"/>
+      <br>
+      <label for="nome"><b>Nome</b></label>
+      <br>
+      <input type="text" placeholder="Enter first name" required th:field="${user.nome}" id="nome"/>
+      <br>
+      <label for="cognome"><b>Cognome</b></label>
+      <br>
+      <input type="text" placeholder="Enter last name" required th:field="${user.cognome}" id="cognome"/>
+      <button type="submit" value="register">Login</button>
+    </form>
+  </div>
+</div>
+<div class="navbar">
+  <a th:href="@{/}" class="homepage-link">
+    Officina AutoSport
+  </a>
+  <div class="group-link">
+    <a th:href="@{/login}" class="login-link">
+      Login
+    </a>
+    <a th:href="@{/register}" class="register-link">
+      Register
+    </a>
+    <a th:href="@{/contacts}" class="contatti-link">
+      Contatti
+    </a>
+  </div>
+</div>
+</body>
+</html>

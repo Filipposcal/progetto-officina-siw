@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Officina AutoSport</title>
-    <link rel="stylesheet" href="../static/css/my-style.css">
+    <link rel="stylesheet" th:href="@{/css/my-style.css}">
 </head>
     <body>
         <div class="container">
-        <img class="demo-bg" src="../static/images/backgrounds/officina.jpg" alt="">
+        <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
             <div class="informazioni">
                 <h1 class="informazioni-titolo"> La nostra storia:</h1>
                 <p class="informazioni-testo">
@@ -19,19 +19,19 @@
             </div>
         </div>
         <div class="navbar">
-            <a href="index.html" class="homepage-link">
+            <a th:href="@{/}" class="homepage-link">
                 Officina AutoSport
             </a>
-        <div class="group-link">
-            <a href="loginForm.html" class="login-link">
-                Login
-            </a>
-            <a href="registerForm.html" class="register-link">
-                Register
-            </a>
-            <a href="chiSiamo.html" class="contatti-link">
-                Contatti
-            </a>
+            <div class="group-link">
+                <a th:href="@{/login}" class="login-link">
+                    Login
+                </a>
+                <a th:href="@{/register}" class="register-link">
+                    Register
+                </a>
+                <a th:href="@{/contacts}" class="contatti-link">
+                    Contatti
+                </a>
         </div>
         </div>
     </body>

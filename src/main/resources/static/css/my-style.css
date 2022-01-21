@@ -11,6 +11,73 @@
     align-items: center;
 }
 
+.registerForm{
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
+    width: 600px;
+    height: 600px;
+    border: solid black;
+    text-align: center;
+    background: rgba( 18, 31, 217, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.loginForm{
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
+    width: 600px;
+    height: 600px;
+    border: solid black;
+    text-align: center;
+    background: rgba( 18, 31, 217, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 40px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1504aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-link-rs{
+    color: yellow;
+}
+
+.benvenuto{
+    font-size: 60px;
+}
+
 .demo-bg{
     opacity: 0.8;
     width: 100%;
