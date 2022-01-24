@@ -2,13 +2,16 @@ package it.uniroma3.siw.spring.service;
 
 import it.uniroma3.siw.spring.model.Meccanico;
 import it.uniroma3.siw.spring.repository.MeccanicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service @Transactional
 public class MeccanicoService {
 
+    @Autowired
     private MeccanicoRepository meccanicoRepository;
 
     public Meccanico getMeccanico(Long id){

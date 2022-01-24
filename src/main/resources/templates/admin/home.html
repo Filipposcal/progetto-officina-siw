@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Officina AutoSport</title>
+    <link rel="stylesheet" th:href="@{/css/my-style.css}">
 </head>
 <body>
-qui home admin
+<div class="container">
+    <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+    <div class="informazioni">
+        <h6 class="informazioni-titolo"> Benvenuto!
+            <br>
+            Questo è il menù amministratore.
+            <br>
+            Cosa vorresti fare?</h6>
+        <ul>
+            <li>
+                <a th:href="@{/admin/tipointervento}" class="customer-link">
+                    Aggiungi un nuovo servizio!
+                </a>
+            </li>
+            <br>
+            <li>
+                <a th:href="@{/admin/intervento}" class="customer-link">
+                    Inserisci un nuovo intervento!
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/interventiDisponibili}" class="customer-link">
+                    Consulta i servizi che offriamo!
+                </a>
+            </li>
+            <br>
+            <li>
+                <a th:href="@{/interventiPassati}" class="customer-link">
+                    Consulta gli interventi che hai effettuato in passato!
+                </a>
+            </li>
+            <br>
+        </ul>
+    </div>
+
+</div>
+<div class="navbar">
+    <a th:href="@{/}" class="homepage-link">
+        Officina AutoSport
+    </a>
+    <div class="group-link">
+        <a th:href="@{/login}" class="login-link">
+            Login
+        </a>
+        <a th:href="@{/register}" class="register-link">
+            Register
+        </a>
+        <a th:href="@{/contacts}" class="contatti-link">
+            Contatti
+        </a>
+    </div>
+</div>
 </body>
 </html>

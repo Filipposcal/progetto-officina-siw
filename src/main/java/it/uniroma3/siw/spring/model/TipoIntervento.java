@@ -19,4 +19,10 @@ public class TipoIntervento {
     private String nome;
     private String descrizione;
     private Float costo;
+
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

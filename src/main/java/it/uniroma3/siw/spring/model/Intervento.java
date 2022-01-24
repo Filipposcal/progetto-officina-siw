@@ -20,7 +20,7 @@ public class Intervento {
     @OneToOne
     private TipoIntervento tipoIntervento;
     private LocalDate dataPrenotazione;
-    private LocalDateTime appuntamento;
+    private LocalDate dataAppuntamento;
     @OneToOne
     private Meccanico meccanico;
 }

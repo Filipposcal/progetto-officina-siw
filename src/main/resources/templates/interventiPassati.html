@@ -19,9 +19,9 @@
       </thead>
       <tbody>
       <tr th:each="intervento : ${interventi}">
-        <td><span th:text="${interventi.tipoIntervento}"> Servizio </span></td>
-        <td><span th:text="${tipoIntervento.dataPrenotazione}"> Data prenotazione </span></td>
-        <td><span th:text="${tipoIntervento.appuntamento}"> Data appuntamento </span></td>
+        <td><span th:text="${intervento.tipoIntervento.toString()}"> Servizio </span></td>
+        <td><span th:text="${intervento.dataPrenotazione}"> Data prenotazione </span></td>
+        <td><span th:text="${intervento.dataAppuntamento}"> Data appuntamento </span></td>
       </tr>
       </tbody>
     </table>

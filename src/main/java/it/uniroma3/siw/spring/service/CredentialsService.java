@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import it.uniroma3.siw.spring.model.Credentials;
 import it.uniroma3.siw.spring.repository.CredentialsRepository;
 
-@Service
+@Service @Transactional
 public class CredentialsService {
 	
     @Autowired

@@ -3,6 +3,7 @@ package it.uniroma3.siw.spring.controller;
 import it.uniroma3.siw.spring.controller.validator.InterventoValidator;
 import it.uniroma3.siw.spring.model.Intervento;
 import it.uniroma3.siw.spring.service.InterventoService;
+import it.uniroma3.siw.spring.service.TipoInterventoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,11 +22,16 @@ public class InterventoController {
     private InterventoService interventoService;
     @Autowired
     private InterventoValidator interventoValidator;
+    @Autowired
+    TipoInterventoService tipoInterventoService;
+
+    
 
     @GetMapping (path="/admin/intervento")
     public String addIntervento(Model model){
+        model.addAttribute("tipiIntervento",tipoInterventoService.findAll());
         model.addAttribute("intervento",new Intervento());
-        return "interventoForm";
+        return "/admin/newIntervento";
     }
 
 
@@ -36,7 +42,7 @@ public class InterventoController {
             this.interventoService.saveIntervento(intervento);
         }
         model.addAttribute("interventi",this.interventoService.findAll());
-        return "interventi";
+        return "admin/home";
     }
 
     @GetMapping(path="/intervento/{id}")
@@ -49,7 +55,7 @@ public class InterventoController {
     public String getInterventi(Model model){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("interventi",this.interventoService.interventiByUser(this.interventoService.getCredentialsService().getUserByUsername(userDetails.getUsername())));
-        return "interventi";
+        return "interventiPassati";
     }
 
 }

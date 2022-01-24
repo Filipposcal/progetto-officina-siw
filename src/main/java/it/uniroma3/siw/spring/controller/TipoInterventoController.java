@@ -24,16 +24,14 @@ public class TipoInterventoController {
     @GetMapping(path="/admin/tipointervento")
     public String addTipoIntervento(Model model){
         model.addAttribute("tipoIntervento",new TipoIntervento());
-        return "tipoInterventoForm";
+        return "/admin/newTipoIntervento.html";
     }
 
     @PostMapping(path="/admin/tipointervento")
     public String addTipoIntervento(@ModelAttribute("tipoIntervento") TipoIntervento tipoIntervento, Model model, BindingResult bindingResult){
-        this.tipoInterventoValidator.validate(tipoIntervento,bindingResult);
-        if(!bindingResult.hasErrors())
             this.tipoInterventoService.saveTipoIntervento(tipoIntervento);
         model.addAttribute("tipiIntervento",this.tipoInterventoService.findAll());
-        return "tipiIntervento";
+        return "/admin/home";
     }
 
     @GetMapping(path="/tipointervento/{id}")
