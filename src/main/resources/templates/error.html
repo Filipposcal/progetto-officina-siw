@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Officina AutoSport</title>
+  <link rel="stylesheet" th:href="@{/css/my-style.css}">
+</head>
+<body>
+<div class="container">
+  <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+  <div class="informazioni">
+    <h1 class="informazioni-titolo"> Qualcosa è andato storto...</h1>
+    <p class="informazioni-testo">
+      Torna alla
+      <a th:href="@{/index}" class="login-link-rs">
+        <b>home!</b>
+      </a>
+    </p>
+  </div>
+</div>
+<div class="navbar">
+  <a th:href="@{/}" class="homepage-link">
+    Officina AutoSport
+  </a>
+  <div class="group-link">
+    <a th:href="@{/login}" class="login-link">
+      Login
+    </a>
+    <a th:href="@{/register}" class="register-link">
+      Register
+    </a>
+    <a th:href="@{/contacts}" class="contatti-link">
+      Contatti
+    </a>
+  </div>
+</div>
+</body>
+</html>
