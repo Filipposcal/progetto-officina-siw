@@ -28,6 +28,7 @@ public class UserController {
         return "admin/newUser.html";
     }
 
+
     @RequestMapping(value = {"/admin/user/register"}, method = RequestMethod.POST)
     public String registerUser(@ModelAttribute("user") User user,
                                BindingResult userBindingResult) {
@@ -35,12 +36,33 @@ public class UserController {
         return "admin/userSuccessful";
     }
 
-    @PostMapping
+    @PostMapping(path = "/admin/user/save")
+    public String saveUser(@ModelAttribute("user") User user){
+        userService.saveUser(user);
+        return "admin/userSuccessful";
+    }
+
+    @RequestMapping(value = {"/admin/user/update"}, method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("user") User user,
+                               BindingResult userBindingResult) {
+        user.setNome(user.getNome());
+        user.setCognome((user.getCognome()));
+        return "admin/userSuccessful";
+    }
+
 
     @GetMapping(path = "/admin/user/{id}")
     public String getUser(Model model, @PathVariable Long id) {
         model.addAttribute("user", this.userService.getUser(id));
         return "user";
     }
+
+    @GetMapping (path = "/admin/user/showFormUpdate/{id}")
+    public String showFormUpdate(@PathVariable(value="id")Long id, Model model){
+        User user = userService.getUser(id);
+        model.addAttribute("user", user);
+        return "admin/updateForm";
+    }
+
 
 }

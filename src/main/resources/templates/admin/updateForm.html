@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Officina AutoSport</title>
+  <link rel="stylesheet" th:href="@{/css/my-style.css}" />
+</head>
+<body>
+<div class="container">
+  <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+  <div class="loginForm">
+    <form th:action="@{/admin/user/save}" th:object="${user}" method="POST">
+      <input type="hidden" th:field="*{id}"/>
+      <h1>Aggiorna cliente:</h1>
+      <label for="Nome"><b>Nome</b></label>
+      <br>
+      <input type="text" th:field="*{nome}" placeholder="Nome" name="Nome" id="Nome" required autofocus="autofocus">
+      <br>
+      <label for="Nome"><b>Cognome</b></label>
+      <br>
+      <input type="text" th:field="*{cognome}" placeholder="Cognome" name="Cognome" id="Cognome">
+      <br>
+      <button type="submit" value="Login">Aggiorna dati</button>
+    </form>
+  </div>
+</div>
+<div class="navbar">
+  <a th:href="@{/}" class="homepage-link">
+    Officina AutoSport
+  </a>
+  <div class="group-link">
+    <a th:href="@{/login}" class="login-link">
+      Login
+    </a>
+    <a th:href="@{/register}" class="register-link">
+      Register
+    </a>
+    <a th:href="@{/contacts}" class="contatti-link">
+      Contatti
+    </a>
+  </div>
+</div>
+</body>
+</html>

@@ -15,6 +15,7 @@
                 <th> Nome</th>
                 <th> Cognome</th>
                 <th> ID</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                 <td><span th:text="${utente.nome}"> Nome </span></td>
                 <td><span th:text="${utente.cognome}"> Cognome </span></td>
                 <td><span th:text="${utente.id}"> ID </span></td>
+                <td><span><a th:href="@{/admin/user/showFormUpdate/{id}(id=${utente.id})}"> Update</a></span></td>/>
             </tr>
             </tbody>
         </table>

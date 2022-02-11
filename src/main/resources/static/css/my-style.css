@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
 
-.container{
+.container {
     z-index: -1;
     position: absolute;
     width: 100%;
@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.registerForm{
+.registerForm {
     position: absolute;
     z-index: 1;
     margin-top: 100px;
@@ -19,11 +19,11 @@
     height: 600px;
     border: solid black;
     text-align: center;
-    background: rgba( 18, 31, 217, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(18, 31, 217, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: white;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
@@ -31,7 +31,7 @@
     font-size: 20px;
 }
 
-.loginForm{
+.loginForm {
     position: absolute;
     z-index: 1;
     margin-top: 100px;
@@ -39,11 +39,11 @@
     height: 600px;
     border: solid black;
     text-align: center;
-    background: rgba( 18, 31, 217, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(18, 31, 217, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: white;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
@@ -70,30 +70,30 @@ button {
     width: 100%;
 }
 
-.login-link-rs{
+.login-link-rs {
     color: yellow;
 }
 
-.mappa{
+.mappa {
     width: 500px;
     height: 200px;
     opacity: 0.8;
 }
 
-.benvenuto{
+.benvenuto {
     font-size: 60px;
 }
 
-.customer-link{
+.customer-link {
     font-size: 30px;
     color: white;
 }
 
-.customer-link:hover{
+.customer-link:hover {
     color: yellow;
 }
 
-.demo-bg{
+.demo-bg {
     opacity: 0.8;
     width: 100%;
     height: 100%;
@@ -103,52 +103,59 @@ table, th, td {
     border: 1px solid blue;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-body{
+body {
     margin: 0px;
 }
 
-.navbar{
+.navbar {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba( 18, 31, 217, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(18, 31, 217, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.group-link{
+.group-link {
     margin-left: 200px;
 }
 
 
-.homepage-link{
+.tabella {
+    margin-left: auto;
+    margin-right: auto;
+    size: auto;
+}
+
+.homepage-link {
     position: absolute;
     left: 2%;
     color: white;
     font-size: 50px;
 }
 
-.login-link, .register-link, .contatti-link{
+.login-link, .register-link, .contatti-link {
     color: white;
     margin: 0;
     font-size: 40px;
     padding-right: 10px;
 }
 
-.homepage-link:hover, .login-link:hover, .register-link:hover{
-    color: yellow;//
+.homepage-link:hover, .login-link:hover, .register-link:hover {
+    color: yellow;
+/ /
 }
 
-.informazioni{
+.informazioni {
     position: absolute;
     z-index: 1;
     margin-top: 100px;
@@ -156,22 +163,22 @@ body{
     height: 600px;
     border: solid black;
     text-align: center;
-    background: rgba( 18, 31, 217, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(18, 31, 217, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: white;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
     border-radius: 20px;
 }
 
-.informazioni-titolo{
+.informazioni-titolo {
     font-size: 40px;
 }
 
-.informazioni-testo{
+.informazioni-testo {
     font-size: 30px;
 }
 
