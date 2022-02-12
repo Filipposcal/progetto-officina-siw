@@ -31,7 +31,7 @@ public class TipoInterventoController {
     public String addTipoIntervento(@ModelAttribute("tipoIntervento") TipoIntervento tipoIntervento, Model model, BindingResult bindingResult){
             this.tipoInterventoService.saveTipoIntervento(tipoIntervento);
         model.addAttribute("tipiIntervento",this.tipoInterventoService.findAll());
-        return "/admin/home";
+        return "/admin/servizioSuccessful";
     }
 
     @GetMapping(path="/tipointervento/{id}")

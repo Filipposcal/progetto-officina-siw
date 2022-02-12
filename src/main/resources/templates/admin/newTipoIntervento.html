@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
-    <div class="loginForm">
+    <div class="registerForm">
         <form th:action="@{/admin/tipointervento}" method="POST">
             <h4>Nuovo servizio:</h4><br>
             <label for="nome"><b>Nome</b></label>
@@ -17,11 +17,11 @@
             <br>
             <label for="descrizione"><b>Descrizione</b></label>
             <br>
-            <input type="descrizione" placeholder="Descrizione" name="descrizione" id="descrizione">
+            <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione">
             <br>
             <label for="costo"><b>Costo</b></label>
             <br>
-            <input type="costo" placeholder="Costo" name="costo" id="costo">
+            <input type="text" placeholder="Costo" name="costo" id="costo">
             <br>
             <button type="submit" value="submit">Submit</button>
         </form>
@@ -32,11 +32,8 @@
         Officina AutoSport
     </a>
     <div class="group-link">
-        <a th:href="@{/login}" class="login-link">
-            Login
-        </a>
-        <a th:href="@{/register}" class="register-link">
-            Register
+        <a th:href="@{/home}" class="login-link">
+            Home
         </a>
         <a th:href="@{/contacts}" class="contatti-link">
             Contatti

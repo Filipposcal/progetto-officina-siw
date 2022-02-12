@@ -30,7 +30,6 @@ public class MiscellaneousController {
     }
 
     @RequestMapping("/home")
-
     public String redirectHome(){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());

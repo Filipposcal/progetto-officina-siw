@@ -35,14 +35,13 @@ public class InterventoController {
     }
 
 
-    @PostMapping(path="/admin/intervento")
+    @PostMapping(path="/admin/intervento/save")
     public String addIntervento(@ModelAttribute("intervento") Intervento intervento, Model model, BindingResult bindingResult){
-        this.interventoValidator.validate(intervento,bindingResult);
         if(!bindingResult.hasErrors()){
             this.interventoService.saveIntervento(intervento);
         }
         model.addAttribute("interventi",this.interventoService.findAll());
-        return "admin/home";
+        return "admin/interventoSuccessful";
     }
 
     @GetMapping(path="/intervento/{id}")

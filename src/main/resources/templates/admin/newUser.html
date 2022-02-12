@@ -13,11 +13,11 @@
             <h1>Nome:</h1>
             <label for="name"><b>Nome</b></label>
             <br>
-            <input type="text" placeholder="Enter first name..." required th:field="${user.nome}" id="name"/>
+            <input type="text" placeholder="First name" required th:field="${user.nome}" id="name"/>
             <br>
             <label for="cognome"><b>Cognome</b></label>
             <br>
-            <input type="text" placeholder="Enter last name..." required th:field="${user.cognome}" id="cognome"/>
+            <input type="text" placeholder="Last name" required th:field="${user.cognome}" id="cognome"/>
             <br>
             <button type="submit" value="register">Submit</button>
         </form>
@@ -28,11 +28,8 @@
         Officina AutoSport
     </a>
     <div class="group-link">
-        <a th:href="@{/login}" class="login-link">
-            Login
-        </a>
-        <a th:href="@{/register}" class="register-link">
-            Register
+        <a th:href="@{/home}" class="login-link">
+            Home
         </a>
         <a th:href="@{/contacts}" class="contatti-link">
             Contatti

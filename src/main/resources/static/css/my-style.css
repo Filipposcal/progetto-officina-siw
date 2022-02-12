@@ -140,14 +140,26 @@ body {
     position: absolute;
     left: 2%;
     color: white;
-    font-size: 50px;
+    font-size: 35px;
 }
 
+.userTable{
+    width: 100%;
+}
+
+.informazioni-admin{
+    top: auto;
+    font-size: 25px;
+}
+
+
 .login-link, .register-link, .contatti-link {
+    float: left;
     color: white;
-    margin: 0;
-    font-size: 40px;
-    padding-right: 10px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
 }
 
 .homepage-link:hover, .login-link:hover, .register-link:hover {
