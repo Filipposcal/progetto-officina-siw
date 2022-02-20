@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Officina AutoSport</title>
@@ -12,13 +13,13 @@
         <table>
             <thead>
             <tr>
-                <th> Username </th>
-                <th> Role </th>
+                <th> Username</th>
+                <th> Role</th>
             </tr>
             </thead>
             <tbody>
             <tr th:if="${user.empty}">
-                <td colspan="2"> No users found </td>
+                <td colspan="2"> No users found</td>
             </tr>
             <tr th:each="user : ${user}">
                 <td><span th:text="${user.userName}"> Title </span></td>
@@ -29,17 +30,46 @@
     </div>
 </div>
 <div class="navbar">
-    <a th:href="@{/}" class="homepage-link">
-        Officina AutoSport
-    </a>
-    <div class="group-link">
-        <a th:href="@{/home}" class="login-link">
-            Home
-        </a>
-        <a th:href="@{/contacts}" class="contatti-link">
-            Contatti
-        </a>
-    </div>
+    <ul>
+        <li class="navlinks">
+            <a th:href="@{/}" class="homepage-link">
+                Officina AutoSport
+            </a>
+        </li>
+        <div class="group-link">
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/login}" class="login-link">
+                    Login
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/register}" class="register-link">
+                    Register
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/contacts}" class="contatti-link">
+                    Contatti
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/home}" class="contatti-link">
+                    Home
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/home}" class="contatti-link">
+                    Admin
+                </a>
+            </li>
+            <li class="navlinks">
+                <form class="form-inline" method="post" th:action="@{/logout}">
+                    <button class="logout" sec:authorize="isAuthenticated()" type="submit">Log Out
+                    </button>
+                </form>
+            </li>
+        </div>
+    </ul>
 </div>
 </body>
 </html>

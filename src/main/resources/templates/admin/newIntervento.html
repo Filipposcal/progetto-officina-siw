@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Officina AutoSport</title>
@@ -9,39 +10,74 @@
 <div class="container">
     <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
     <div class="registerForm">
-        <form th:action="@{/admin/intervento/save}" method="POST" >
+        <form th:action="@{/admin/intervento/save}" method="POST">
             <h4>Nuovo intervento:</h4><br>
             <label for="tipoIntervento"><b>Servizio</b></label>
             <br>
-            <select name="intervento.tipoIntervento" id="tipoIntervento">
+            <select name="tipoIntervento" style="size:auto;" id="tipoIntervento">
                 <option th:each="tipoIntervento : ${tipiIntervento}"
-                        th:text="${tipoIntervento}"></option>
+                        th:text="${tipoIntervento}" th:value="${tipoIntervento.id}"></option>
             </select>
             <br>
-            <label for="descrizione"><b>Descrizione</b></label>
+            <label for="user"><b>Utente</b></label>
             <br>
-            <input type="text" placeholder="Descrizione" name="descrizione" id="descrizione">
+            <select name="user" style="size:auto;" id="user">
+                <option th:each="user : ${users}"
+                        th:text="${user.nome}  +' ' +  ${user.cognome}" th:value="${user.id}"></option>
+            </select>
             <br>
-            <label for="costo"><b>Costo</b></label>
+            <label for="prenotazione">Data prenotazione:</label>
+            <input type="date" id="prenotazione" name="dataPrenotazione">
             <br>
-            <input type="text" placeholder="Costo" name="costo" id="costo">
+            <br>
+            <label for="appuntamento">Data appuntamento:</label>
+            <input type="date" id="appuntamento" name="dataAppuntamento">
             <br>
             <button type="submit" value="submit">Submit</button>
         </form>
     </div>
 </div>
 <div class="navbar">
-    <a th:href="@{/}" class="homepage-link">
-        Officina AutoSport
-    </a>
-    <div class="group-link">
-        <a th:href="@{/home}" class="login-link">
-            Home
-        </a>
-        <a th:href="@{/contacts}" class="contatti-link">
-            Contatti
-        </a>
-    </div>
+    <ul>
+        <li class="navlinks">
+            <a th:href="@{/}" class="homepage-link">
+                Officina AutoSport
+            </a>
+        </li>
+        <div class="group-link">
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/login}" class="login-link">
+                    Login
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/register}" class="register-link">
+                    Register
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/contacts}" class="contatti-link">
+                    Contatti
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/home}" class="contatti-link">
+                    Home
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/home}" class="contatti-link">
+                    Admin
+                </a>
+            </li>
+            <li class="navlinks">
+                <form class="form-inline" method="post" th:action="@{/logout}">
+                    <button class="logout" sec:authorize="isAuthenticated()" type="submit">Log Out
+                    </button>
+                </form>
+            </li>
+        </div>
+    </ul>
 </div>
 </body>
 </html>

@@ -30,14 +30,16 @@ public class MiscellaneousController {
     }
 
     @RequestMapping("/home")
-    public String redirectHome(){
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
-        if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
-            return "admin/home";
-        }
+    public String home(){
         return "home";
     }
+
+    @RequestMapping("/admin/home")
+    public String homeAdmin(){
+        return "admin/home";
+    }
+
+
 
 
 }

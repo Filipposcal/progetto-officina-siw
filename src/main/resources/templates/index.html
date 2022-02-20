@@ -1,39 +1,66 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Officina AutoSport</title>
     <link rel="stylesheet" th:href="@{/css/my-style.css}">
 </head>
-    <body>
-        <div class="container">
-        <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
-            <div class="informazioni">
-                <h1 class="informazioni-titolo"> La nostra storia:</h1>
-                <p class="informazioni-testo">
-                    Dal 1989, Officina AutoSport garantisce qualità e impegno
-                    per riparazioni e modifiche su automobili, moto e scooter.
-                    Affiliata con l'Università Roma Tre, l'officina mette a
-                    disposizione sconti e offerte per tutti gli studenti.
-                    Che aspetti? Procedi con il <a href="/login">Login!</a>
-                </p>
-            </div>
-        </div>
-        <div class="navbar">
+<body>
+<div class="container">
+    <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
+    <div class="informazioni">
+        <h1 class="informazioni-titolo"> La nostra storia:</h1>
+        <p class="informazioni-testo">
+            Dal 1989, Officina AutoSport garantisce qualità e impegno
+            per riparazioni e modifiche su automobili, moto e scooter.
+            Affiliata con l'Università Roma Tre, l'officina mette a
+            disposizione sconti e offerte per tutti gli studenti.
+           <span sec:authorize="isAnonymous()"> Che aspetti? Procedi con il <a href="/login">Login!</a></span>
+        </p>
+    </div>
+</div>
+<div class="navbar">
+    <ul>
+        <li class="navlinks">
             <a th:href="@{/}" class="homepage-link">
                 Officina AutoSport
             </a>
-            <div class="group-link">
-                <a th:href="@{/login}" class="login-link">
+        </li>
+        <div class="group-link">
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/login}" class="login-link">
                     Login
                 </a>
-                <a th:href="@{/register}" class="register-link">
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/register}" class="register-link">
                     Register
                 </a>
+            </li>
+            <li class="navlinks">
                 <a th:href="@{/contacts}" class="contatti-link">
                     Contatti
                 </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/home}" class="contatti-link">
+                    Home
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/home}" class="contatti-link">
+                    Admin
+                </a>
+            </li>
+            <li class="navlinks">
+                <form class="form-inline" method="post" th:action="@{/logout}">
+                    <button class="logout" sec:authorize="isAuthenticated()" type="submit">Log Out
+                    </button>
+                </form>
+            </li>
         </div>
-        </div>
-    </body>
+    </ul>
+</div>
+</body>
 </html>

@@ -1,43 +1,73 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
-  <meta charset="UTF-8">
-  <title>Officina AutoSport</title>
-  <link rel="stylesheet" th:href="@{/css/my-style.css}" />
+    <meta charset="UTF-8">
+    <title>Officina AutoSport</title>
+    <link rel="stylesheet" th:href="@{/css/my-style.css}"/>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <img class="demo-bg" th:src="@{/images/backgrounds/officina.jpg}" alt="">
     <div class="loginForm">
-      <form th:action="@{/login}" method="POST">
-      <h1>Accedi</h1>
-      <label for="username"><b>Username</b></label>
-      <br>
-      <input type="text" placeholder="Enter Username" name="username" id="username" required autofocus="autofocus">
-      <br>
-      <label for="password"><b>Password</b></label>
-      <br>
-      <input type="password" placeholder="Enter Password" name="password" id="password" autofocus ="autofocus" required>
-      <br>
-      <button type="submit" value="Login">Login</button>
-      </form>
+        <form th:action="@{/login}" method="POST">
+            <h1>Accedi</h1>
+            <label for="username"><b>Username</b></label>
+            <br>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required
+                   autofocus="autofocus">
+            <br>
+            <label for="password"><b>Password</b></label>
+            <br>
+            <input type="password" placeholder="Enter Password" name="password" id="password" autofocus="autofocus"
+                   required>
+            <br>
+            <button type="submit" value="Login">Login</button>
+        </form>
     </div>
-  </div>
-  <div class="navbar">
-    <a th:href="@{/}" class="homepage-link">
-      Officina AutoSport
-    </a>
-    <div class="group-link">
-      <a th:href="@{/login}" class="login-link">
-        Login
-      </a>
-      <a th:href="@{/register}" class="register-link">
-        Register
-      </a>
-      <a th:href="@{/contacts}" class="contatti-link">
-        Contatti
-      </a>
-    </div>
-  </div>
+</div>
+<div class="navbar">
+    <ul>
+        <li class="navlinks">
+            <a th:href="@{/}" class="homepage-link">
+                Officina AutoSport
+            </a>
+        </li>
+        <div class="group-link">
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/login}" class="login-link">
+                    Login
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="isAnonymous()" th:href="@{/register}" class="register-link">
+                    Register
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/contacts}" class="contatti-link">
+                    Contatti
+                </a>
+            </li>
+            <li class="navlinks">
+                <a th:href="@{/home}" class="contatti-link">
+                    Home
+                </a>
+            </li>
+            <li class="navlinks">
+                <a sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/home}" class="contatti-link">
+                    Admin
+                </a>
+            </li>
+            <li class="navlinks">
+                <form class="form-inline" method="post" th:action="@{/logout}">
+                    <button class="logout" sec:authorize="isAuthenticated()" type="submit">Log Out
+                    </button>
+                </form>
+            </li>
+        </div>
+    </ul>
+</div>
+</div>
 </body>
 </html>

@@ -1,7 +1,5 @@
 package it.uniroma3.siw.spring.controller;
 
-import it.uniroma3.siw.spring.controller.validator.TipoInterventoValidator;
-import it.uniroma3.siw.spring.model.Intervento;
 import it.uniroma3.siw.spring.model.TipoIntervento;
 import it.uniroma3.siw.spring.service.TipoInterventoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +16,6 @@ public class TipoInterventoController {
 
     @Autowired
     TipoInterventoService tipoInterventoService;
-    @Autowired
-    TipoInterventoValidator tipoInterventoValidator;
 
     @GetMapping(path="/admin/tipointervento")
     public String addTipoIntervento(Model model){
